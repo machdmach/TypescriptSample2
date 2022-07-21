@@ -11,7 +11,7 @@ export class TimedThrottleJobQueue {
         this.jobQueue = [];
     }
 
-    push(callback: Function) { //, ...args: any[]) {
+    push(callback: Function) {
         if (this.timeoutHandle !== undefined) {
             this.callBackAbortedCount++;
             console.log('clearing timeout, handle=' + this.timeoutHandle + ', ' + this.callBackAbortedCount + ' callbacks aborted');
@@ -36,19 +36,13 @@ export class TimedThrottleJobQueue {
         //onKeyPress
         //  s.push(function () { callAjax(); //to get data for autocomplete/autosuggest })s
 
-        // if (s.tryGet()) {
-        //     //obj1.call(1, '3');
-        // }
-        // let b2 = s.tryGet();
         q.push(function () { console.log('abc 0'); });
         q.push(function () { console.log('abc 111'); });
         q.push(function () { console.log('abc 111 x'); });
-        //q.push(function (x: string) { console.log('abc 222' + x); }, 'zzz');
         setTimeout(function () {
             q.push(function () { console.log('abc vvvvvvvvv'); });
             q.push(function () { console.log('abc 999'); });
         }, 1000);
-        // //s.clear();
     }
 
     //=========================================================================
@@ -56,7 +50,6 @@ export class TimedThrottleJobQueue {
         if (this.timeoutHandle === undefined) {
             this.timeoutHandle = window.setInterval(function (p1: any) {
                 let thisObj = p1 as TimedThrottleJobQueue;
-                //thisObj.isAvailable = true;
                 thisObj.executeCallback();
             }, this.timeoutMillis, this);
 

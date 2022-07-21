@@ -36,11 +36,6 @@ export class UrlX {
         let searchParams = url.searchParams;
         paramName = paramName.toLowerCase();
         let oldVal = searchParams.get(paramName);
-        if (oldVal === null) {
-            // if (throwsOnNotFound) {
-            //     throw Error(`Search Param [${name}] not found in URL`);
-            // }
-        }
         searchParams.set(paramName, value);
 
         let ret = new URL(url.href);

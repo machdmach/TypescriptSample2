@@ -14,6 +14,7 @@ export class StringX {
         //'case': a===a', a!=A, compare with case
         //'variant': default: all diff
     }
+
     //=========================================================================
     static extractNumber(s: string): number | undefined {
         let matches = s.match(/(\d+)/);
@@ -25,7 +26,8 @@ export class StringX {
         console.debug(`${ret} extractNumber from ${s}`);
         return ret;
     }
-    //=========================================================================sfsff
+
+    //=========================================================================
     static isNullOrWhiteSpace(s: string | String | null | undefined) {
         let ret = true;
         if (s) {
@@ -35,10 +37,9 @@ export class StringX {
         }
         return ret;
     }
+
     //=========================================================================
     static padLeft(value: string, padding: any) {
-        //let eg = "zz".padStart;
-
         if (typeof padding === "number") {
             return Array(padding + 1).join(" ") + value;
         }
@@ -46,22 +47,6 @@ export class StringX {
             return padding + value;
         }
         throw new Error(`Expected string or number, got '${padding}'.`);
-    }
-    //=========================================================================
-    static isString(s: any): s is string {
-        //static isString(s: any) {
-        //return typeof x === "string";
-        // let s: string = "asdf";
-        // s.replace("aa", "bb");
-
-        // //  result += ph
-        // s = s.replace(/&/g, '&amp;');
-        if (typeof (s) === 'string') { }
-        return s instanceof String;
-    }
-    static replaceAll_eg() {
-        //let pattern = ""
-        //s = s.replace(/&/g, '&amp;');
     }
 
     //=========================================================================
@@ -83,7 +68,6 @@ export class StringX {
 
     //=========================================================================
     static format_tests() {
-
         console.log(StringX.format('{0} is dead, but {1} is alive! {0} {2}', 'ASP', 'ASP.NET'));
     }
     static test1() {
@@ -105,20 +89,4 @@ to wrap across multiple lines because \
 otherwise my code is unreadable.";
 
     }
-
-    // function f1() {
-    //     type Easing = "ease-in" | "ease-out" | "ease-in-out";
-    //     enum Enum1 {
-    //         a = 1,
-    //         b,
-    //         c,
-    //     }
-    //     let e1: Enum1 = Enum1.a;
-    //     console.log('e1 valueOf is: ',
-    //         e1.toString(), //1
-    //         Enum1.b, //2
-    //         Enum1[Enum1.a], //a
-    //         e1.valueOf(), //1
-    //     );
-    // }
 }

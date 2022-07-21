@@ -1,6 +1,5 @@
 import { StringBuilder } from "./StringBuilder.js";
 
-//=========================================================================
 export class TimeSpan {  //Duration
     date: Date;
     //momentDuration: moment.Duration;
@@ -9,7 +8,6 @@ export class TimeSpan {  //Duration
         if (typeof totalMillis !== "number") {
             throw Error("Invalid date diff: " + totalMillis);
         }
-        //this.momentDuration = moment.duration(diff);
         if (typeof (totalMillis) === "undefined") {
             this.date = new Date();
         }
@@ -18,9 +16,6 @@ export class TimeSpan {  //Duration
                 //January 01, 1970
                 this.date = new Date(Date.now() + totalMillis);
             }
-            // else if (dt instanceof Date) {
-            //     this.date = dt;
-            // }
             else {
                 throw Error("Invalid date: " + totalMillis);
             }
