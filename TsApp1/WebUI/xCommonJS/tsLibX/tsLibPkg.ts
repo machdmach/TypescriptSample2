@@ -74,7 +74,6 @@ export * from "./pDomX/Theme.js";
 export * from "./pDomX/TogglingRadioButtonOptions.js";
 export * from "./pDomX/Validators.js";
 export * from "./pDomX/XMLHttpRequestX.js";
-export * from "./pDomX/xx_XSSSanitizer.js";
 //---
 export * from "./pSystemX/ArraySlicer.js";
 export * from "./pSystemX/ArrayX.js";
