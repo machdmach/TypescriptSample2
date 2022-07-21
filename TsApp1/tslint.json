@@ -1,0 +1,58 @@
+//https://palantir.github.io/tslint/usage/rule-flags/
+//
+//cmd>tslint 'WebUI/xCommonJS/tsLibX/**/*.ts'
+//DOS> tslint --project .
+//--project: The directory containing a tsconfig.json file that will be used to determine which files will be linted. This flag also enables rules that require the type checker.
+//tslint:disable-line
+/* tslint:disable:no-var-keyword */
+{
+    "extends": "tslint:recommended",
+    //"extends": "tslint-etc",
+
+    /*"rulesDirectory": ["path/to/custom/rules/directory/", "another/path/"],*/
+    "rules": {
+        "forin": false,
+        "space-before-function-paren": false,
+        "max-line-length": {
+            "options": [190]
+        },
+        "class-name": false,
+        "comment-format": false,
+        "quotemark": false,
+        "only-arrow-functions": false,
+        "new-parens": true,
+        "arrow-parens": false,
+        "ban-types": false,
+        "no-arg": true,
+        "function-constructor": false,
+        "no-bitwise": true,
+        "no-conditional-assignment": true, //if (x = 0) {
+        "no-consecutive-blank-lines": true,
+        "object-literal-sort-keys": false, // {z:1, a: 2}
+        "interface-name": false, //IPerson
+        "interface-over-type-literal": false,
+        "one-line": false,
+        "object-literal-shorthand": false, //Expected method shorthand in object literal ()=>{} instead of function(){}
+        "member-access": false,
+        "member-ordering": false,
+        "ordered-imports": false,
+        "prefer-const": false,
+        "prefer-for-of": false,
+        "variable-name": false, //variable name must be in lowerCamelCase, PascalCase or UPPER_CASE [variable-name]
+        "no-empty": false, //ignore empty blocks{ };
+        "curly": false, //if statements must be braced [curly]
+        // "trailing-comma": true,
+        "no-string-throw": false, // throw "err" instead of throw Error("err")
+        "no-unnecessary-initializer": false, //defaultVal = undefined instead of defaultVal?:any
+        "no-console": {
+            "severity": "off",
+            "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
+        },
+        "max-classes-per-file": false
+    },
+    "jsRules": {
+        "max-line-length": {
+            "options": [190]
+        }
+    }
+}

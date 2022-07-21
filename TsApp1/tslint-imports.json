@@ -1,0 +1,23 @@
+//tslint --config tslint-imports.json --project .
+//tslint --config tslint-imports.json --project . --fix
+{
+	//https://github.com/cartant/tslint-etc
+	"extends": "tslint-etc",
+	"rules": {
+		"no-unused-declaration": {
+			"options": [{
+				"declarations": false,
+				"imports": true
+			}],
+			"severity": "error"
+		}
+		// "no-unsafe-callback-scope": {
+		// 	"options": [{
+		// 		"allowMethods": true,
+		// 		"allowParameters": true,
+		// 		"allowProperties": true
+		// 	}],
+		// 	"severity": "error"
+		// }
+	}
+}

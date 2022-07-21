@@ -1,0 +1,3 @@
+export class BomLib {
+    //Browser ObjectModel:  Navigator, History, Location, Screen,...
+}

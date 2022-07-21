@@ -1,0 +1,73 @@
+import { ConfigX } from "../pDomX/ConfigX.js";
+import { AppMenu, IncludeHTML, StatusBar } from "../tsLibPkg.js";
+import { AppCurrentUser } from "./AppCurrentUser.js";
+import { AppLib } from "./AppLib.js";
+import { AppPage } from "./AppPage.js";
+import { DevLib } from "./DevLib.js";
+import { DxLib } from "./DxLib.js";
+import { LibraryTestMain } from "./LibraryTestMain.js";
+
+export class AppInit {
+
+    static async init(appName: string) {
+        ConfigX.init(appName);
+
+        if (alreadyExecuted("AppInit.init")) return;
+        if (ConfigX.isLocalDebug) {
+            await DevLib.RunDevTasks(); //webapack reload...
+        }
+        DevLib.processEnvTags();
+        AppPage.setupUnimplemented_onClicked();
+        await AppInit.postInit();
+    }
+
+    //=========================================================================
+    static async postInit() {
+        if (alreadyExecuted("AppInit.postInit")) return;
+        await DxLib.handle_zzStuff();
+        if (ConfigX.isLocalhost && location.href.includes("zz-libtest")) await LibraryTestMain.runTests();
+    }
+
+    //=========================================================================
+    static async initAll() {
+        if (alreadyExecuted("AppInit.initAll")) throw "dkwokd";
+
+        Config.isUsingJQueryDialog = true;
+        console.log('... BoottstrappingFuncs.ts, {Config}=', Config);
+
+        ConfigX.init(ConfigX.appName);
+        await AppInit.getConfigFromDataApiSvc();
+        await AppInit.init("appAll"); //----------------------
+
+        AppPage.SetDocumentTitle(ConfigX.appName);
+
+        await IncludeHTML.processDirective_IncludeHtml();
+
+        AppMenu.setupHamburgerMenuButton();
+        AppPage.fixHyperLinks();
+        AppPage.setPageFooterOnBottom();
+        AppPage.populateBasicInfo();
+
+        StatusBar.init(null);
+        StatusBar.setText("Application  loaded");
+        await AppInit.postInit(); //----------------------
+    }
+
+    //=========================================================================
+    static async getConfigFromDataApiSvc() {
+        if (alreadyExecuted("AppInit.getConfigFromDataApiSvc")) return;
+
+        const api = AppLib.newDataApiClient("getDataSvcInfo");
+        const svcInfo: DataSvcInfo = await api.fetchPayloadWithBusyMesg("Loading DataSvcInfo");
+        console.log('DataSvcInfo', svcInfo);
+
+        AppCurrentUser._username = svcInfo.username;
+
+        let roles = svcInfo.userRoles ?? "";
+        AppCurrentUser._userRoles = roles.toLocaleLowerCase();
+
+        ConfigX._publicFacingUrlRoot = svcInfo.publicFacingUrlRoot;
+        ConfigX._dbEnv = svcInfo.dbEnv;
+        ConfigX.DataApiVersion = svcInfo.apiVersion;
+    }
+}
