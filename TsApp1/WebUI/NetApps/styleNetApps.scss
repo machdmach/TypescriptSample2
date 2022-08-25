@@ -1,0 +1,74 @@
+@import '../xCommon/assets/my-commonjs-ui-3p.css';
+
+/* top left bottom right */
+html {
+    //height: 100vh;
+    //zzwidth: 100vw;
+}
+
+body {
+    zbackground-color: black;
+    // background-color: #071d49;
+    // margin: 0px;
+    // padding: 0px;
+    //font-family: 'Times New Roman', Times, serif;
+    //font-family: 'Open Sans', "Helvetica Neue", Helvetica, 'Segoe UI', sans-serif;
+    //position: relative;
+    //background-color: #2c406b; //#2c406b: HND website bgcolor
+    //background-color: #eeeeee; //whitesmoke
+    //background-color: inherit;
+    //font-size: 1.1em;
+    //font-family: 'Times New Roman', Times, serif;
+    //min-width: 380px;x
+
+    // display: flex;
+    // flex-direction: column;
+    // height: 100vh;
+    // width: 100vw;
+}
+
+header {
+    //padding-top: 2px;
+    //font-family: 'Antonio', sans-serif;
+    //font-size: 14pt;
+}
+
+main {
+    //flex: auto;
+    //width: 100vw;
+    //min-height: 1024px;
+    //position: relative;
+    //margin: auto;
+    // padding: 6px;
+    //background-color: #eee;
+    //background-color: lightgreen;
+    //xdisplay: flex;
+}
+
+footer {
+    //flex: none;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 6px;
+    font-size: 10px;
+    //display: flex;
+    //background-color: inherit;
+    color: #ccc;
+    //font-weight: normal;
+}
+
+// #pageHeader #logoImage {
+//     height: 70px;
+//     width: auto;
+//     //width: 226px;
+// }
+
+// #navBar {
+//     max-width: 1400px;
+//     margin: auto;
+// }
+
+// #navBarRow2 {
+//     display: none;
+// }
