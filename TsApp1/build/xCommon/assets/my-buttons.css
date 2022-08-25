@@ -1,0 +1,72 @@
+/* ============================================================== buttons/bootstrap ===*/
+.btnx {
+  font-size: 1.01em;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  line-height: 1.5;
+}
+
+.btnx:not(:disabled):not(.disable) {
+  cursor: pointer;
+}
+
+.btnx-info {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btnx-disabled {
+  color: #aaa;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+  cursor: text;
+  font-size: smaller;
+}
+
+.btnx-primary {
+  color: #fff;
+  background-color: #005b8f;
+  border-color: #007bff;
+}
+
+.btnx-warning {
+  color: #fff;
+  background-color: lightsalmon;
+  border-color: lightsalmon;
+}
+
+.btnx-danger {
+  color: #fff;
+  background-color: indianred;
+  border-color: indianred;
+}
+
+.btnx-link {
+  color: darkblue;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.btnx-link:hover {
+  background-color: lightcyan;
+}
+
+.btnx:hover {
+  box-shadow: 2px 2px 2px grey;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: yellow;
+  color: lightyellow;
+  transition-timing-function: ease-in-out;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=my-buttons.css.map */

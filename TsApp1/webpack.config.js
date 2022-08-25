@@ -11,21 +11,21 @@ let webpackConf1 = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'zzWebpackOut/'),
-        //path: '//vhpweb01/Sites/FsWeb_StaticFiles/PubSitesRoot/WebUIx/PubSites/'.replaceAll('/', '\\'),
+        path: path.resolve(__dirname, 'dist/'),
+        //path: '//vhpweb01/Sites/FsWeb_StaticFiles/PubSitesRoot/build/PubSites/'.replaceAll('/', '\\'),
         //libraryTarget: 'var',
         //library: '[name]',
     },
     entry: {
-        mainMapsBundle: './WebUIx/Apps/mainApps.js',
-        //mainMapsBundle: './WebUIx/PubSites/Maps/mainMaps.js',
-        //mainPubSitesBundle: './WebUIx/PubSites/mainPubSites.js',
+        mainSampleBundle: './build/SampleApps/mainApps.js',
+        //mainMapsBundle: './build/PubSites/Maps/mainMaps.js',
+        //mainPubSitesBundle: './build/PubSites/mainPubSites.js',
 
         //pubAppsMainBundle: './zz_tsOut/PubApps/PubAppsMain.js',
         //garsMainBundle: './zz_tsOut/GARS/GarsMain.js',
         //reamsMainBundle: './zz_tsOut/REAMS/ReamsMain.js',
         //fidsMainBundle: './zz_tsOut/GaFids/FidsMain.js',
-        //<script src='../../../WebUIx/PubSites/Maps/mainMaps.js' type='module'></script>
+        //<script src='../../../build/PubSites/Maps/mainMaps.js' type='module'></script>
         //webpackEntryBundle: './WebUI/xCommonJS/jsLibX/webpackEntry.js',
     },
     stats: 'normal', //https://webpack.js.org/configuration/stats/  verbose, normal, minimal, errors-only, none

@@ -1,0 +1,25 @@
+.bodyDiv {
+  display: flex;
+}
+
+html {
+  zbackground-color: black;
+  zdisplay: none;
+}
+
+body {
+  zbackground-color: black !important;
+  zdisplay: none;
+}
+
+zz {
+  background-color: black !important;
+}
+
+.dataTabCrawlerRes img {
+  max-width: 300px;
+  height: auto;
+  border: solid lightblue 1px;
+}
+
+/*# sourceMappingURL=new-dev.css.map */

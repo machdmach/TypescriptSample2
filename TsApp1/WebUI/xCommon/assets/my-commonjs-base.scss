@@ -1,0 +1,174 @@
+:root {
+    // --zfunky-shadow: 3px 3px 10px brown;
+    // --zmain-color: #06c;
+    // --zaccent-color: #006;
+    // --zdialog-bgc: #eee;
+    --mobile-max-width: 767px;
+    --desktop-min-width: 768px;
+    --gutterx: 8px;
+}
+
+@media (min-width: 600px) {
+
+    //margin: var(--gutter);
+    //https://stackoverflow.com/questions/40722882/css-native-variables-not-working-in-media-queries
+    :root {
+        --gutter: 16px;
+    }
+}
+
+/*
+<img class="mdc-image-list__image" src="...">
+mdc=material design component
+
+@media (max-width: 599px) {
+  .my-image-list {
+    @include mdc-image-list-standard-columns(3);
+  }
+}
+https://www.youtube.com/watch?v=Dqf5oup9Jqs animated text bg
+
+     --special-padding: 1.5em;
+    padding-bottom: calc(var(--special-padding) + 1em);
+
+    :root,
+:root:lang(en) {--external-link: "external link";}
+:root:lang(de) {--external-link: "externer Link";}
+
+a[href^="http"]::after {content: " (" var(--external-link) ")"}
+    */
+
+/*
+** ========================================================================================
+** ======================================= Fonts ==========================================
+** ========================================================================================
+*/
+
+// @font-face {
+//     font-family: 'Material Icons';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: url(./Material-Icons.woff2) format('woff2');
+//     src: url('../../../WebUI/xCommonJS/assets/Courgette-Regular.ttf');
+// }
+// .Courgette1 {
+//     font-family: 'Courgette-Regular', 'zTimes Roman', 'Courier', 'Georgia', serif;
+// }
+
+/*zx
+** ========================================================================================
+** ======================================= general ========================================
+** ========================================================================================
+mcc: my custom component
+  transition:flex 0.3s ease-out; // note that we're transitioning flex, not height!
+  height:600px; // sadly, we're required to set at least the container height explicitly
+
+  overflow:hidden;
+  transition:transform 0.3s ease-out; // note that we're transitioning transform, not height!
+  height:auto;
+  transform:scaleY(1); // implicit, but good to specify explicitly
+  transform-origin:top; // keep the top of the element in the same place. this is optional.
+
+  document.querySelector('.section.collapsible').classList.toggle('mcc-flex-collapsed');
+  xx
+*/
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+}
+
+body {
+    margin: 0;
+}
+
+a[href] {
+    //text-decoration-skip: ink;
+    text-decoration-skip-ink: none;
+}
+
+// a[href]:after {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     bottom: 0;
+//     right: 0;
+//     margin: auto;
+//     background: #000;
+//     height: 1px;
+
+// }
+
+
+.busyIcon1 {
+    font-size: 20pt;
+    // width: 100px;
+    // height: 100px;
+    display: inline-block;
+    //background-color: #0CB1C4;
+    //color: lightseagreen;
+    color: steelblue;
+    animation-name: busyIcon1_frame;
+    animation-duration: 900ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    /* transform: rotate(3deg); */
+    /* transform: rotate(0.3rad);/ */
+    /* transform: rotate(3grad); */
+    /* transform: rotate(.03turn);  */
+}
+
+@keyframes busyIcon1_frame {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.ul-plain {
+    list-style-type: none;
+    margin-block-start: 0px;
+    padding-inline-start: 0px;
+    margin-block-end: 0px;
+    padding-inline-end: 0px;
+}
+
+//@media screen and (max-width: var(--mobile-max-width)) {
+@media screen and (max-width: 767px) {
+
+    /* device is mobile */
+    .mobile-only {
+        //display: unset;
+    }
+
+    .desktop-only,
+    [data-mobile-move-content-to] {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    /* device is desktop */
+    .mobile-only {
+        display: none;
+    }
+
+    .desktop-only {
+        //display: unset;
+    }
+}

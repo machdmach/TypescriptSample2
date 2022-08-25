@@ -1,0 +1,30 @@
+<style>
+    .d-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: aqua;
+    }
+</style>
+
+<section class="d-2">
+    <div>11</div>
+    <div>22</div>
+</section>
+
+<form class="formx" method="post" enctype="application/x-www-form-urlencoded"><input class="ff-control" name="URL" value="http://doadocs.mccarran.com/dsweb/View/Collection-36930"><br><button class="btnx btnx-primary" type="submit" name="method" value="Get Indexed Text" style="margin-right: 10px;">Get Indexed Text</button><button class="btnx btnx-primary" type="submit" name="method" value="Get Html Source" style="margin-right: 10px;">Get Html Source</button><button class="btnx btnx-primary" type="submit" name="method" value="Get AHrefs" style="margin-right: 10px;">Get AHrefs</button><br>
+    <section class="d-2">
+        <!-- <div><label class="ff-label">Download Path: C:\temp\</label><input class="ff-control" name="downloadPath" value="folder1"></div> -->
+
+        <div><label class="cb-label">Download<input class="zff-control" name="downloadFlag" type="checkbox"></label></div>
+        <div><label class="cb-label">Recursive<input class="zff-control" name="recursiveFlag" type="checkbox"></label></div>
+
+        <!--
+        <br>
+
+        <section class="d-2">
+            <button class="btnx btnx-primary" type="button" name="method" value="Download User Files" style="margin-right: 10px;">Download User Files</button>
+        </section> -->
+    </section>
+    <br>
+    <div class="htmlText"></div>
+</form>

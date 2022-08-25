@@ -1,0 +1,27 @@
+@import '../xCommonJS/assets/my-commonjs-ui-3p.css';
+
+/*Put CSS styles specific to your app here*/
+
+body {
+    zbackground-color: black;
+    margin-left: 5px;
+}
+main {
+    ztext-align: center;
+    margin: auto;
+}
+
+table td {
+    padding: 3px;
+    zborder-width: 1px;
+    zborder-color: #777;
+    zborder-collapse: collapse;
+}
+
+table {
+    zborder-collapse: collapse;
+}
+
+main {
+    margin-left: 10px;
+}

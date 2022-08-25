@@ -3,7 +3,7 @@
         "baseUrl": "./", //baseUrl is for non-relative modules import.
         "emitDecoratorMetadata": false,
         "experimentalDecorators": false,
-        "removeComments": true,
+        //"removeComments": true,
         /* Strict Type-Checking Options */
         "strict": true,
         /* Enable all strict type-checking options. */
@@ -25,7 +25,7 @@
         //if using webpack 2+ or rollup, to leverage tree shaking:
         "moduleResolution": "node",
         //"sourceRoot": "./src",
-        "sourceMap": true,
+        //"sourceMap": true,
         "downlevelIteration": true,
         "module": "es2020", //es6
         "target": "ES2019", //ES2019, ES6 never: esnext ?? would not work for webpack
@@ -38,7 +38,7 @@
         ],
         "allowJs": true,
         "checkJs": false,
-        "outDir": "./WebUIx",
+        "outDir": "./build",
     },
     "compileOnSave": true,
     "include": [
@@ -46,6 +46,9 @@
     ],
     "exclude": [
         "**/zz*.ts",
+        "./build",
+        "./dist"
+        //"./lib, bin/ test/, unit/ integration /env"
         //"node_modules",
         //"src/**/*",
     ],
